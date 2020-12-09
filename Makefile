@@ -1,4 +1,6 @@
-FORCE:
+DAYS=$(shell ls -d d*)
 
-d%: FORCE
+.PHONY: $(DAYS)
+
+$(DAYS):
 	cd $@ && go build . && ./$@
