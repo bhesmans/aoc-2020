@@ -38,7 +38,9 @@ func readInput(inputName string) conway {
 		l := scanner.Text()
 		for x := 0; x < len(l); x++ {
 			if l[x] == '#' {
-				p := point{vals: [maxDim]int{x, y, 0, 0}}
+				p := point{}
+				p.vals[0] = x
+				p.vals[1] = y
 				c.mem[p] = l[x]
 			}
 		}
