@@ -43,14 +43,12 @@ func (e expression) reduce() number {
 
 func (e expression) reduce1() number {
 	i := 1
-	tmp := e.vals[0]
+	res := e.vals[0]
 	for _, op := range e.ops {
-		e.vals[0] = op.execute(e.vals[0], e.vals[i])
+		res = op.execute(res, e.vals[i])
 		i++
 	}
-	res := e.vals[0].(number)
-	e.vals[0] = tmp
-	return res
+	return res.(number)
 }
 
 func (e expression) reduce2() number {
