@@ -1,0 +1,9 @@
+name: compile-and-run
+on: [push]
+jobs:
+  compile-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+      - run: make all
